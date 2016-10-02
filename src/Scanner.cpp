@@ -19,11 +19,14 @@ const std::string& Scanner::getSrcContent() const
 
 void Scanner::removeComments()
 {
-    std::size_t comPos, comEnd;
-    while( (comPos = srcContent.find("(*")) != std::string::npos )
+    if(!commentsRemoved)
     {
-        comEnd = srcContent.find("*)") + 2;
-        srcContent.erase(comPos, comEnd-comPos);
+        std::size_t comPos, comEnd;
+        while( (comPos = srcContent.find("(*")) != std::string::npos )
+        {
+            comEnd = srcContent.find("*)") + 2;
+            srcContent.erase(comPos, comEnd-comPos);
+        }
+        commentsRemoved = true;
     }
-    commentsRemoved = true;
 }
