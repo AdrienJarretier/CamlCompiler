@@ -2,6 +2,7 @@
 #define SCANNER_HPP
 
 #include <fstream>
+#include <sstream>
 #include <string>
 
 class Scanner
@@ -18,6 +19,8 @@ class Scanner
         Scanner(const char* filename);
 
         const std::string& getSrcContent() const;
+
+        std::string nextPhrase();
 
         void removeComments();
 

@@ -17,6 +17,17 @@ const std::string& Scanner::getSrcContent() const
     return srcContent;
 }
 
+std::string Scanner::nextPhrase()
+{
+    std::size_t pos = srcContent.find(";;");
+
+    std::string phrase = srcContent.substr(0, pos);
+
+    srcContent.erase(0, pos+2);
+
+    return phrase;
+}
+
 void Scanner::removeComments()
 {
     if(!commentsRemoved)
