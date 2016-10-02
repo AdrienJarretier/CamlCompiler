@@ -2,8 +2,10 @@
 #define SCANNER_HPP
 
 #include <fstream>
+#include <map>
 #include <sstream>
 #include <string>
+#include <vector>
 
 class Scanner
 {
@@ -25,6 +27,8 @@ class Scanner
         void removeComments();
 
     private:
+
+        std::map<std::string, std::vector<std::string>> lexicon;
 
         bool commentsRemoved;
 
