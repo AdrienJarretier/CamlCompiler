@@ -27,7 +27,9 @@ class Scanner
 
         void removeComments();
 
-        std::vector<std::pair<std::string, std::string>> tockenize();
+        std::pair<std::string, std::string> nextToken();
+
+        std::vector<std::pair<std::string, std::string>> tokenize();
 
     private:
 

@@ -141,8 +141,12 @@ void Scanner::removeComments()
     }
 }
 
+std::pair<std::string, std::string> Scanner::nextToken()
+{
 
-std::vector<std::pair<std::string, std::string>> Scanner::tockenize()
+}
+
+std::vector<std::pair<std::string, std::string>> Scanner::tokenize()
 {
     std::vector<std::pair<std::string, std::string>> tockens;
     // a pair is {"lexeme", "tocken category"}
