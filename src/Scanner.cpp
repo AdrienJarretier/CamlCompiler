@@ -148,7 +148,7 @@ std::pair<std::string, std::string> Scanner::nextToken()
 
 std::vector<std::pair<std::string, std::string>> Scanner::tokenize()
 {
-    std::vector<std::pair<std::string, std::string>> tockens;
+    std::vector<std::pair<std::string, std::string>> tokens;
     // a pair is {"lexeme", "tocken category"}
 
     std::smatch matchResult;
@@ -190,9 +190,9 @@ std::vector<std::pair<std::string, std::string>> Scanner::tokenize()
         }
     }
 
-    tockens.push_back(longestMatch);
+    tokens.push_back(longestMatch);
 
-    return tockens;
+    return tokens;
 }
 
 
