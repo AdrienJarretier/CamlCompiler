@@ -87,7 +87,7 @@ Scanner::Scanner(const char* filename)
         ]    ^    _    __   {    |    |]   }    '
 
     */
-    lexicon["00_keyword"] = R"(^\b(and|as|begin|do|done|downto|else|end|exception|for|fun|function|if|in|let|match|mutable|not|of|or|prefix|rec|then|to|try|type|value|where|while|with)\b)";
+    lexicon["00_keyword"] = R"(^\b(and|as|begin|do|done|downto|else|end|exception|for|fun|function|if|in|let|match|mod|mutable|not|of|or|prefix|rec|then|to|try|type|value|where|while|with)\b)";
     lexicon["05_character keyword"] = R"(^(#|!=|!|&|\(|\)|\*\.|\*|\+\.|\+|,|-\.|->|-|\.\(|\.|\/\.|\/|::|:=|:|;;|;|<\.|<-|<=\.|<=|<>\.|<>|<|=\.|==|=|>\.|>=\.|>=|>|@|\[\||\[|]|\^|__|_|\{|\|]|\||}|'))";
 
     /*
@@ -187,7 +187,7 @@ std::vector<std::pair<std::string, std::string>> Scanner::tokenize()
     {
         std::pair<std::string, std::string> token = nextToken();
 
-        if(token.second != "blank")
+        if(token.second != "blank" && token.second != "comment")
         {
             tokens.push_back(token);
         }
