@@ -87,9 +87,9 @@ void testScannerConstruct()
     }
 }
 
-void testTokenize()
+std::vector<std::pair<std::string, std::string>> testTokenize(const char* camlFile)
 {
-    Scanner sc("testFiles/exC3fonctions.ml");
+    Scanner sc(camlFile);
 
     std::vector<std::pair<std::string, std::string>> toks = sc.tokenize();
 
@@ -97,4 +97,6 @@ void testTokenize()
     {
         cout << token.first << " : " << token.second << endl << endl;
     }
+
+    return toks;
 }
