@@ -88,7 +88,7 @@ Scanner::Scanner(const char* filename)
 
     */
     lexicon["keywords"] = R"(^\b(and|as|begin|do|done|downto|else|end|exception|for|fun|function|if|in|let|match|mutable|not|of|or|prefix|rec|then|to|try|type|value|where|while|with)\b)";
-    lexicon["characters keywords"] = R"(^(#|!=|!|&|\(|\)|\*\.|\*|\+\.|\+|,|-\.|->|-|\.\(|\.|\/\.|\/|::|:=|:|;;|;|<\.|<-|<=\.|<=|<>\.|<>|<|=\.|==|=|>\.|>=\.|>=|>|@|\[\||\[|]|\^|__|_|{|\|]|\||}|'))";
+    lexicon["characters keywords"] = R"(^(#|!=|!|&|\(|\)|\*\.|\*|\+\.|\+|,|-\.|->|-|\.\(|\.|\/\.|\/|::|:=|:|;;|;|<\.|<-|<=\.|<=|<>\.|<>|<|=\.|==|=|>\.|>=\.|>=|>|@|\[\||\[|]|\^|__|_|\{|\|]|\||}|'))";
 
     /*
 
