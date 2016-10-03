@@ -10,6 +10,8 @@ void testScannerConstruct()
 {
     try
     {
+
+        cout << R"(^[ \n\t\r\f]+)" << endl;
         Scanner sc("testFiles/exC3fonctions.ml");
 
     }
@@ -31,10 +33,10 @@ void testScannerConstruct()
             cout << "error_backref" << endl;
             break;
         case error_brack:
-            cout << "error_brack" << endl;
+            cout << "error_brack : The expression contained mismatched [ and ]. " << endl;
             break;
         case error_paren:
-            cout << "error_paren" << endl;
+            cout << "error_paren : The expression contained mismatched ( and ). " << endl;
             break;
         case error_brace:
             cout << "error_brace" << endl;
@@ -56,6 +58,9 @@ void testScannerConstruct()
             break;
         case error_stack:
             cout << "error_stack" << endl;
+            break;
+        default:
+            cout << "another error happened" << endl;
             break;
         }
 
