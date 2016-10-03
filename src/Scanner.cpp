@@ -95,7 +95,8 @@ Scanner::Scanner(const char* filename)
     Ambiguities
 
     Lexical ambiguities are resolved according to the ``longest match'' rule:
-    when a character sequence can be decomposed into two tokens in several different ways,
+    when a character sequence can be decomposed into two tokens
+    in several different ways,
     the decomposition retained is the one with the longest first token.
 
     */
@@ -154,19 +155,38 @@ std::vector<std::pair<std::string, std::string>> Scanner::tockenize()
 
     std::map<std::string, std::regex>::iterator it=lexicon.begin();
 
-    while( it != lexicon.end() && !matched )
+    std::vector<std::pair<std::string, std::string>> matches;
+
+    while( it != lexicon.end() )
     {
         matched = regex_search (tmp,
               matchResult,
               it->second);
 
+        if(matched)
+        {
+//            std::cout << matchResult[0] << std::endl;
+            matches.push_back(std::make_pair(matchResult[0],(it)->first));
+        }
+
         ++it;
     }
 
-    if(matched)
+//    for(int i=0 ;i< 20; ++i)
+//    {
+//        std::cout << matchResult[i] << std::endl;
+//    }
+
+    std::pair<std::string, std::string> longestMatch;
+    for(auto lexCate : matches)
     {
-        tockens.push_back(std::make_pair(matchResult[0],(--it)->first));
+        if (lexCate.first.size() > longestMatch.first.size())
+        {
+            longestMatch = lexCate;
+        }
     }
+
+    tockens.push_back(longestMatch);
 
     return tockens;
 }
