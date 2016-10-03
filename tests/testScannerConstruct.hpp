@@ -8,10 +8,30 @@ using namespace std::regex_constants;
 
 void testScannerConstruct()
 {
+//    cout << R"(^[A-Za-z][A-Za-z0-9]*(?:_[A-Za-z0-9]+)*)" << endl;
+//    regex re(R"(^[A-Za-z][A-Za-z0-9]*(?:_[A-Za-z0-9]+)*)");
+//
+//    cout << R"(^-?(0[xX][0-9A-Fa-f]+|0[oO][0-7]+|0[bB][0-1]+|[0-9]+))" << endl;
+//    regex re2(R"(^-?(0[xX][0-9A-Fa-f]+|0[oO][0-7]+|0[bB][0-1]+|[0-9]+))");
+//
+//    cout << R"(^-?[0-9]+([eE][+-]?[0-9]+|\.[0-9]*([eE][+-]?[0-9]+)?))" << endl;
+//    regex re3(R"(^-?[0-9]+([eE][+-]?[0-9]+|\.[0-9]*([eE][+-]?[0-9]+)?))");
+//
+//    cout << R"(^`([^`\\]|\\[\\`ntbr]|\\[0-9]{3})`)" << endl;
+//    regex re4(R"(^`([^`\\]|\\[\\`ntbr]|\\[0-9]{3})`)");
+//
+//    cout << R"(^\"([^\"\\]|\\[\\\"ntbr]|\\[0-9]{3})*\")" << endl;
+//    regex re5(R"(^\"([^\"\\]|\\[\\\"ntbr]|\\[0-9]{3})*\")");
+//
+//    cout << R"(^\b(and|as|begin|do|done|downto|else|end|exception|for|fun|function|if|in|let|match|mutable|not|of|or|prefix|rec|then|to|try|type|value|where|while|with)\b)" << endl;
+//    regex r6e(R"(^\b(and|as|begin|do|done|downto|else|end|exception|for|fun|function|if|in|let|match|mutable|not|of|or|prefix|rec|then|to|try|type|value|where|while|with)\b)");
+//
+//    cout << R"(^#|^!=|^!|^&|^\(|^\)|^\*\.|^\*|^\+\.|^\+|^,|^-\.|^->|^-|^\.\(|^\.|^\/\.|^\/|^::|^:=|^:|^;;|^;|^<\.|^<-|^<=\.|^<=|^<>\.|^<>|^<|^=\.|^==|^=|^>\.|^>=\.|^>=|^>|^@|^\[\||^\[|^]|^\^|^__|^_|^{|^\|]|^\||^}|^')" << endl;
+//    regex re7(R"(^#|^!=|^!|^&|^\(|^\)|^\*\.|^\*|^\+\.|^\+|^,|^-\.|^->|^-|^\.\(|^\.|^\/\.|^\/|^::|^:=|^:|^;;|^;|^<\.|^<-|^<=\.|^<=|^<>\.|^<>|^<|^=\.|^==|^=|^>\.|^>=\.|^>=|^>|^@|^\[\||^\[|^]|^\^|^__|^_|^{|^\|]|^\||^}|^')");
+
     try
     {
 
-        cout << R"(^[ \n\t\r\f]+)" << endl;
         Scanner sc("testFiles/exC3fonctions.ml");
 
     }
