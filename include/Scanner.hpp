@@ -38,6 +38,8 @@ class Scanner
         bool commentsRemoved;
 
         std::string srcContent;
+
+        static void eraseTrailingWhiteSpaces (std::string* str);
 };
 
 #endif // SCANNER_HPP

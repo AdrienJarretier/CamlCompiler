@@ -198,7 +198,16 @@ std::vector<std::pair<std::string, std::string>> Scanner::tokenize()
     return tokens;
 }
 
+void Scanner::eraseTrailingWhiteSpaces(std::string* str)
+{
+    std::string whitespaces (" \t\f\v\n\r");
 
+    std::size_t found = str->find_last_not_of(whitespaces);
+    if (found!=std::string::npos)
+        str->erase(found+1);
+    else
+        str->clear();            // str is all whitespace
+}
 
 
 
