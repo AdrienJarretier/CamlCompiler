@@ -86,3 +86,15 @@ void testScannerConstruct()
 
     }
 }
+
+void testTokenize()
+{
+    Scanner sc("testFiles/exC3fonctions.ml");
+
+    std::vector<std::pair<std::string, std::string>> toks = sc.tokenize();
+
+    for(auto token : toks)
+    {
+        cout << token.first << " : " << token.second << endl << endl;
+    }
+}
