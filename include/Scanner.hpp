@@ -3,8 +3,10 @@
 
 #include <fstream>
 #include <map>
+#include <regex>
 #include <sstream>
 #include <string>
+#include <vector>
 
 class Scanner
 {
@@ -25,9 +27,11 @@ class Scanner
 
         void removeComments();
 
+        std::vector<std::pair<std::string, std::string>> tockenize();
+
     private:
 
-        std::map<std::string, std::string> lexicon;
+        std::map<std::string, std::regex> lexicon;
 
         bool commentsRemoved;
 
