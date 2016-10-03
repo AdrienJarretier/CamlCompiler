@@ -5,7 +5,6 @@
 #include <map>
 #include <sstream>
 #include <string>
-#include <vector>
 
 class Scanner
 {
@@ -28,7 +27,7 @@ class Scanner
 
     private:
 
-        std::map<std::string, std::vector<std::string>> lexicon;
+        std::map<std::string, std::string> lexicon;
 
         bool commentsRemoved;
 
