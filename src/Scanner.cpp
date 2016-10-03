@@ -143,17 +143,7 @@ void Scanner::removeComments()
 
 std::pair<std::string, std::string> Scanner::nextToken()
 {
-
-}
-
-std::vector<std::pair<std::string, std::string>> Scanner::tokenize()
-{
-    std::vector<std::pair<std::string, std::string>> tokens;
-    // a pair is {"lexeme", "tocken category"}
-
     std::smatch matchResult;
-
-    std::string tmp("(* fdfsdf *) dsdsdfs");
 
     bool matched = false;
 
@@ -163,7 +153,7 @@ std::vector<std::pair<std::string, std::string>> Scanner::tokenize()
 
     while( it != lexicon.end() )
     {
-        matched = regex_search (tmp,
+        matched = regex_search (srcContent,
               matchResult,
               it->second);
 
@@ -176,11 +166,6 @@ std::vector<std::pair<std::string, std::string>> Scanner::tokenize()
         ++it;
     }
 
-//    for(int i=0 ;i< 20; ++i)
-//    {
-//        std::cout << matchResult[i] << std::endl;
-//    }
-
     std::pair<std::string, std::string> longestMatch;
     for(auto lexCate : matches)
     {
@@ -190,7 +175,22 @@ std::vector<std::pair<std::string, std::string>> Scanner::tokenize()
         }
     }
 
-    tokens.push_back(longestMatch);
+    return longestMatch;
+}
+
+std::vector<std::pair<std::string, std::string>> Scanner::tokenize()
+{
+    std::vector<std::pair<std::string, std::string>> tokens;
+    // a pair is {"lexeme", "tocken category"}
+
+
+    std::string tmp("(* fdfsdf *) dsdsdfs");
+
+
+
+
+
+    tokens.push_back(nextToken());
 
     return tokens;
 }
