@@ -1,8 +1,11 @@
 #include "ParserTests.hpp"
 
+const std::string pathFile = "example.ml";
+const std::string PathTestCamlFile = "testFiles/srcTest.ml";
+
 void writeTestFile(const char *text) {
   std::ofstream myfile;
-  myfile.open ("testFiles/example.ml");
+  myfile.open (pathFile.c_str());
   myfile << text;
   myfile.close();
 }

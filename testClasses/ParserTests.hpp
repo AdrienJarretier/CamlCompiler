@@ -3,8 +3,6 @@
 
 #include <gtest/gtest.h>
 #include "Parser.hpp"
-const std::string pathFile = "testFiles/example.ml";
-const std::string PathTestCamlFile = "testFiles/srcTest.ml";
 
 class ParserTests : public testing::Test {
 public:
