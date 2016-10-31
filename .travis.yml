@@ -16,11 +16,7 @@ install:
 - sudo make
 - sudo cp *.a /usr/lib
 script: 
-- cd ~
-- ls
-- ls build
-- ls buils
-- ls virtualenv
+- cd ~/AdrienJarretier/CamlCompiler
 - make all
 - cd /bin/Release
 - ./camlCompiler --test
