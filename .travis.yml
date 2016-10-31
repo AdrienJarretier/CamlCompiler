@@ -18,6 +18,9 @@ install:
 script: 
 - cd ~
 - ls
+- ls build
+- ls buils
+- ls virtualenv
 - make all
 - cd /bin/Release
 - ./camlCompiler --test
