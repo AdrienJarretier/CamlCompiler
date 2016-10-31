@@ -2,7 +2,6 @@
 #define PARSERTESTS_HPP
 
 #include <gtest/gtest.h>
-#include "Parser.hpp"
 
 class ParserTests : public testing::Test {
 public:

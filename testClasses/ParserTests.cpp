@@ -1,5 +1,7 @@
 #include <fstream>
 #include "ParserTests.hpp"
+#include "Parser.hpp"
+
 
 const std::string pathFile = "example.ml";
 const std::string PathTestCamlFile = "testFiles/srcTest.ml";
