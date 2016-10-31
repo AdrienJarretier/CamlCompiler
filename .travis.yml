@@ -16,7 +16,7 @@ install:
 - sudo make
 - sudo cp *.a /usr/lib
 script: 
-- cd ~/AdrienJarretier/CamlCompiler
+- cd ~/build/AdrienJarretier/CamlCompiler
 - make all
 - cd /bin/Release
 - ./camlCompiler --test
