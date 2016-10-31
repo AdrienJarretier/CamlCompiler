@@ -1,3 +1,4 @@
+#include <fstream>
 #include "ParserTests.hpp"
 
 const std::string pathFile = "example.ml";
