@@ -1,0 +1,25 @@
+language: cpp
+sudo: required
+dist: trusty
+compiler:
+- gcc
+os:
+- linux
+# - osx
+ruby: 2.2.0
+before_install:
+- sudo apt-get install libgtest-dev
+install:
+- sudo apt-get install cmake # install cmake
+- cd /usr/src/gtest
+- sudo cmake CMakeLists.txt
+- sudo make
+- sudo cp *.a /usr/lib
+script: 
+- make all
+- cd /bin/Release
+- ./camlCompiler --test
+branches:
+  only:
+  - master
+  - "/^v\\d+\\./"
