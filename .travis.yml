@@ -16,6 +16,7 @@ install:
 - sudo make
 - sudo cp *.a /usr/lib
 script: 
+- ls
 - cd ~/CamlCompiler
 - make all
 - cd /bin/Release
