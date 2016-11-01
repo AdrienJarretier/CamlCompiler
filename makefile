@@ -40,9 +40,9 @@ OBJDIR_RELEASE = obj/Release
 DEP_RELEASE = 
 OUT_RELEASE = bin/Release/camlCompiler
 
-OBJ_DEBUG = $(OBJDIR_DEBUG)/main.o $(OBJDIR_DEBUG)/src/Parser.o $(OBJDIR_DEBUG)/testClasses/ParserTests.o
+OBJ_DEBUG = $(OBJDIR_DEBUG)/main.o $(OBJDIR_DEBUG)/src/Parser.o $(OBJDIR_DEBUG)/src/testClasses/ParserTests.o
 
-OBJ_RELEASE = $(OBJDIR_RELEASE)/main.o $(OBJDIR_RELEASE)/src/Parser.o $(OBJDIR_RELEASE)/testClasses/ParserTests.o
+OBJ_RELEASE = $(OBJDIR_RELEASE)/main.o $(OBJDIR_RELEASE)/src/Parser.o $(OBJDIR_RELEASE)/src/testClasses/ParserTests.o
 
 all: debug release
 
@@ -52,7 +52,7 @@ before_debug:
 	test -d bin/Debug || mkdir -p bin/Debug
 	test -d $(OBJDIR_DEBUG) || mkdir -p $(OBJDIR_DEBUG)
 	test -d $(OBJDIR_DEBUG)/src || mkdir -p $(OBJDIR_DEBUG)/src
-	test -d $(OBJDIR_DEBUG)/testClasses || mkdir -p $(OBJDIR_DEBUG)/testClasses
+	test -d $(OBJDIR_DEBUG)/src/testClasses || mkdir -p $(OBJDIR_DEBUG)/src/testClasses
 
 after_debug: 
 
@@ -67,21 +67,21 @@ $(OBJDIR_DEBUG)/main.o: main.cpp
 $(OBJDIR_DEBUG)/src/Parser.o: src/Parser.cpp
 	$(CXX) $(CFLAGS_DEBUG) $(INC_DEBUG) -c src/Parser.cpp -o $(OBJDIR_DEBUG)/src/Parser.o
 
-$(OBJDIR_DEBUG)/testClasses/ParserTests.o: testClasses/ParserTests.cpp
-	$(CXX) $(CFLAGS_DEBUG) $(INC_DEBUG) -c testClasses/ParserTests.cpp -o $(OBJDIR_DEBUG)/testClasses/ParserTests.o
+$(OBJDIR_DEBUG)/src/testClasses/ParserTests.o: src/testClasses/ParserTests.cpp
+	$(CXX) $(CFLAGS_DEBUG) $(INC_DEBUG) -c src/testClasses/ParserTests.cpp -o $(OBJDIR_DEBUG)/src/testClasses/ParserTests.o
 
 clean_debug: 
 	rm -f $(OBJ_DEBUG) $(OUT_DEBUG)
 	rm -rf bin/Debug
 	rm -rf $(OBJDIR_DEBUG)
 	rm -rf $(OBJDIR_DEBUG)/src
-	rm -rf $(OBJDIR_DEBUG)/testClasses
+	rm -rf $(OBJDIR_DEBUG)/src/testClasses
 
 before_release: 
 	test -d bin/Release || mkdir -p bin/Release
 	test -d $(OBJDIR_RELEASE) || mkdir -p $(OBJDIR_RELEASE)
 	test -d $(OBJDIR_RELEASE)/src || mkdir -p $(OBJDIR_RELEASE)/src
-	test -d $(OBJDIR_RELEASE)/testClasses || mkdir -p $(OBJDIR_RELEASE)/testClasses
+	test -d $(OBJDIR_RELEASE)/src/testClasses || mkdir -p $(OBJDIR_RELEASE)/src/testClasses
 
 after_release: 
 
@@ -96,15 +96,15 @@ $(OBJDIR_RELEASE)/main.o: main.cpp
 $(OBJDIR_RELEASE)/src/Parser.o: src/Parser.cpp
 	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c src/Parser.cpp -o $(OBJDIR_RELEASE)/src/Parser.o
 
-$(OBJDIR_RELEASE)/testClasses/ParserTests.o: testClasses/ParserTests.cpp
-	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c testClasses/ParserTests.cpp -o $(OBJDIR_RELEASE)/testClasses/ParserTests.o
+$(OBJDIR_RELEASE)/src/testClasses/ParserTests.o: src/testClasses/ParserTests.cpp
+	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c src/testClasses/ParserTests.cpp -o $(OBJDIR_RELEASE)/src/testClasses/ParserTests.o
 
 clean_release: 
 	rm -f $(OBJ_RELEASE) $(OUT_RELEASE)
 	rm -rf bin/Release
 	rm -rf $(OBJDIR_RELEASE)
 	rm -rf $(OBJDIR_RELEASE)/src
-	rm -rf $(OBJDIR_RELEASE)/testClasses
+	rm -rf $(OBJDIR_RELEASE)/src/testClasses
 
 .PHONY: before_debug after_debug clean_debug before_release after_release clean_release
 
