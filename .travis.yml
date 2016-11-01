@@ -14,7 +14,7 @@ install:
 - cd /usr/src/gtest
 - sudo cmake CMakeLists.txt
 - sudo make clean
-- sudo make release
+- sudo make all
 - sudo cp *.a /usr/lib
 script: 
 - cd ~/build/AdrienJarretier/CamlCompiler
