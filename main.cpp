@@ -1,4 +1,4 @@
-#include "ParserTests.hpp"
+#include "testClasses/ParserTests.hpp"
 #include <string.h>
 
 static void show_usage(std::string name)
