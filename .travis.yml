@@ -13,7 +13,8 @@ install:
 - sudo apt-get install cmake # install cmake
 - cd /usr/src/gtest
 - sudo cmake CMakeLists.txt
-- sudo make
+- sudo make clean
+- sudo make release
 - sudo cp *.a /usr/lib
 script: 
 - cd ~/build/AdrienJarretier/CamlCompiler
