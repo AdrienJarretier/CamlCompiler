@@ -19,8 +19,7 @@ install:
 script: 
 - cd ~/build/AdrienJarretier/CamlCompiler
 - make all
-- ls
-- cd /bin/Release
+- cd bin/Release
 - ./camlCompiler --test
 branches:
   only:
