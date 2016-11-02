@@ -24,5 +24,4 @@ script:
 - ./camlCompiler --test
 branches:
   only:
-  - master
-  - "/^v\\d+\\./"
+  - setupTest
