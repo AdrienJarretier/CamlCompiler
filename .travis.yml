@@ -21,6 +21,3 @@ script:
 - make all
 - cd bin/Release
 - ./camlCompiler --test
-branches:
-  only:
-  - setupTest
