@@ -15,6 +15,6 @@ before_install:
 script:
 - cd ~/build/AdrienJarretier/CamlCompiler
 - if [ $TRAVIS_OS_NAME == linux ]; then make all; fi
-- if [ $TRAVIS_OS_NAME == osx ]; then make -f makefile.mac all; fi
+- if [ $TRAVIS_OS_NAME == osx ]; then echo "OSX"; make -f makefile.mac all; fi
 - cd bin/Release
 - ./camlCompiler --test
