@@ -1,7 +1,7 @@
-echo "begingin"
-if [ "$(uname)" == "Darwin" ]; then
+OS=`uname -s`
+if [  OS = "Darwin" ]; then
   # Do something under Mac OS X platform
-  echo "jksjfklsdjfdlkj"
+  echo "Mac OS"
   brew install cmake
   cd externalLib/gtest-1.8.0/googletest
   mkdir build
@@ -9,8 +9,8 @@ if [ "$(uname)" == "Darwin" ]; then
   cmake -Dgtest_build_samples=ON -Dgtest_build_tests=ON ../.
   make clean
   make all
-elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-  echo "djkvjdkvjkldjvd"
+elif [  OS = "Linux" ]; then
+  echo "Linux"
   # Do something under GNU/Linux platform
   sudo apt-get install libgtest-dev
   sudo apt-get install cmake # install cmake
@@ -20,5 +20,3 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   sudo make all
   sudo cp *.a /usr/lib
 fi
-
-echo "ending"
