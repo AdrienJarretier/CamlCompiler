@@ -4,17 +4,25 @@ dist: trusty
 compiler:
   - gcc
 os:
-#- linux
+- linux
 - osx
 ruby: 2.2.0
 before_install:
  - sudo chmod 775 dependencies.sh
  - sudo chmod 775 dependencies_mac.sh
  - if [ $TRAVIS_OS_NAME == linux ]; then sudo ./dependencies.sh; fi
- - if [ $TRAVIS_OS_NAME == osx ]; then ls; cd externalLib; ls;cd gtest-1.8.0; ls; cd build; ls; cd googlemock; ls; fi
+ - if [ $TRAVIS_OS_NAME == osx ]; then sudo ./dependencies_mac.sh; fi
 script:
 - cd ~/build/AdrienJarretier/CamlCompiler
 - if [ $TRAVIS_OS_NAME == linux ]; then make all; fi
-- if [ $TRAVIS_OS_NAME == osx ]; then echo "OSX"; make -f makefile.mac all; fi
+- ls
+- cd externalLib
+- ls
+- cd build/googlemock
+- ls
+- gtest
+- ls
+- cd ~/build/AdrienJarretier/CamlCompiler
+- if [ $TRAVIS_OS_NAME == osx ]; then make -f makefile.mac; fi
 - cd bin/Release
 - ./camlCompiler --test
