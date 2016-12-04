@@ -15,7 +15,7 @@ INC = -Iinclude -ItestClasses -IexternalLib/gtest-1.8.0/googletest/include
 CFLAGS = -Wall -fexceptions
 RESINC = 
 LIBDIR = 
-LIB = externalLib/gtest-1.8.0/build/googlemock/libgmock.a externalLib/gtest-1.8.0/build/googlemock/libgmock_main.a externalLib/gtest-1.8.0/build/googlemock/gtest/libgtest_main.a externalLib/gtest-1.8.0/build/googlemock/gtest/libgtest.a
+LIB = externalLib/gtest-1.8.0/googletest/build/libgtest_main.a externalLib/gtest-1.8.0/googletest/build/libgtest.a
 LDFLAGS = -pthread
 
 INC_DEBUG = $(INC) -ItestClasses

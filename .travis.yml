@@ -15,18 +15,6 @@ before_install:
 script:
 - cd ~/build/AdrienJarretier/CamlCompiler
 - if [ $TRAVIS_OS_NAME == linux ]; then make all; fi
-- ls
-- cd externalLib
-- ls
-- cd gtest-1.8.0
-- ls
-- cd build
-- ls
-- cd googlemock
-- ls
-- gtest
-- ls
-- cd ~/build/AdrienJarretier/CamlCompiler
 - if [ $TRAVIS_OS_NAME == osx ]; then make -f makefile.mac; fi
 - cd bin/Release
 - ./camlCompiler --test
