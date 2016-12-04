@@ -4,7 +4,7 @@ dist: trusty
 compiler:
   - gcc
 os:
-- linux
+#- linux
 - osx
 ruby: 2.2.0
 before_install:
@@ -18,7 +18,9 @@ script:
 - ls
 - cd externalLib
 - ls
-- cd build/googlemock
+- cd build
+- ls
+- cd googlemock
 - ls
 - gtest
 - ls
