@@ -12,6 +12,7 @@ before_install:
  - sudo ./dependencies.sh;
 script: 
 - cd ~/build/AdrienJarretier/CamlCompiler
-- make all
+- if [ $TRAVIS_OS_NAME == osx ]; make -f makefile.mac all fi
+- if [ $TRAVIS_OS_NAME == linux ]; make all; fi
 - cd bin/Release
 - ./camlCompiler --test
