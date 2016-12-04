@@ -18,6 +18,8 @@ script:
 - ls
 - cd externalLib
 - ls
+- cd gtest-1.8.0
+- ls
 - cd build
 - ls
 - cd googlemock
