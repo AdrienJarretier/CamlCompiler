@@ -8,5 +8,15 @@
 ## Dependencies
 - [googleTest](https://github.com/google/googletest)
 
+## Install
+Theses commands were only been tested on linux
+
+```
+sudo chmod 775 dependencies.sh
+sudo ./dependencies.sh;
+make all
+```
+- That's it !
+
 ##Compilation
- - add flag `-thread` in compilation instruction
+ - add flag `-thread` in compilation instruction if you choose to use an IDE

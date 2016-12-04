@@ -8,14 +8,8 @@ os:
 # - osx
 ruby: 2.2.0
 before_install:
-- sudo apt-get install libgtest-dev
-install:
-- sudo apt-get install cmake # install cmake
-- cd /usr/src/gtest
-- sudo cmake CMakeLists.txt
-- sudo make clean
-- sudo make all
-- sudo cp *.a /usr/lib
+ - sudo chmod 775 dependencies.sh
+ - sudo ./dependencies.sh;
 script: 
 - cd ~/build/AdrienJarretier/CamlCompiler
 - make all
