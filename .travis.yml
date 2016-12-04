@@ -5,7 +5,7 @@ compiler:
   - gcc
 os:
 - linux
-# - osx
+- osx
 ruby: 2.2.0
 before_install:
  - sudo chmod 775 dependencies.sh
