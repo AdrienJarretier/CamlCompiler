@@ -4,8 +4,8 @@ dist: trusty
 compiler:
   - gcc
 os:
-- linux
-#- osx
+#- linux
+- osx
 ruby: 2.2.0
 before_install:
  - sudo chmod 775 dependencies.sh
