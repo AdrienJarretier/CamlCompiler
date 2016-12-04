@@ -5,13 +5,13 @@ compiler:
   - gcc
 os:
 - linux
-- osx
+#- osx
 ruby: 2.2.0
 before_install:
  - sudo chmod 775 dependencies.sh
  - sudo chmod 775 dependencies_mac.sh
  - if [ $TRAVIS_OS_NAME == linux ]; then sudo ./dependencies.sh; fi
- - if [ $TRAVIS_OS_NAME == osx ]; then sudo ./dependencies_mac.sh; fi
+ - if [ $TRAVIS_OS_NAME == osx ]; ls; cd externalLib; ls;cd gtest-1.8.0; ls; cd build; ls; cd googlemock; ls; fi
 script:
 - cd ~/build/AdrienJarretier/CamlCompiler
 - if [ $TRAVIS_OS_NAME == linux ]; then make all; fi
