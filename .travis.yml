@@ -5,10 +5,13 @@ compiler:
   - gcc
 os:
 - linux
+# - osx
 ruby: 2.2.0
 before_install:
  - sudo chmod 775 dependencies.sh
- - sudo ./dependencies.sh;
+ - sudo chmod 775 dependencies_mac.sh
+ - if [ $TRAVIS_OS_NAME == linux ]; then sudo ./dependencies.sh; fi
+ - if [ $TRAVIS_OS_NAME == osx ]; then sudo ./dependencies_mac.sh; fi
 script:
 - cd ~/build/AdrienJarretier/CamlCompiler
 - make all
