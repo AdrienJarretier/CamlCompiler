@@ -22,7 +22,7 @@ On Mac OS
 ```
 sudo chmod 775 dependencies_mac.sh
 sudo ./dependencies_mac.sh;
-make -f makefile.mac
+make -f makefile.mac all
 ```
 - That's it !
 
