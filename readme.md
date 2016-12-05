@@ -15,6 +15,7 @@ On linux
 sudo chmod 775 dependencies.sh
 sudo ./dependencies.sh;
 make all
+```
 
 On Mac OS
 
