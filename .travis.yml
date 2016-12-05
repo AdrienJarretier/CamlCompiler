@@ -4,7 +4,7 @@ dist: trusty
 compiler:
   - gcc
 os:
-#- linux
+- linux
 - osx
 ruby: 2.2.0
 before_install:
