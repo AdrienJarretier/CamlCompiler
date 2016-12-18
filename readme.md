@@ -9,12 +9,20 @@
 - [googleTest](https://github.com/google/googletest)
 
 ## Install
-Theses commands were only been tested on linux
+On linux
 
 ```
 sudo chmod 775 dependencies.sh
 sudo ./dependencies.sh;
 make all
+```
+
+On Mac OS
+
+```
+sudo chmod 775 dependencies_mac.sh
+sudo ./dependencies_mac.sh;
+make -f makefile.mac all
 ```
 - That's it !
 
